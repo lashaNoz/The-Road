@@ -1,30 +1,23 @@
 const container = document.querySelector(".container");
-document.querySelector(".navbar-open-icon").addEventListener("click", () => {
+
+document.querySelector(".open-navbar-icon").addEventListener("click", () => {
   container.classList.add("change");
 });
 
-document.querySelector(".navbar-close-icon").addEventListener("click", () => {
+document.querySelector(".close-navbar-icon").addEventListener("click", () => {
   container.classList.remove("change");
 });
 
-const colors = ["#6495ED", "	#7FFFD4", "	#FFA07A", "#F08080", "#AFEEEE"];
+const colors = ["#6495ed", "#7fffd4", "#ffa07a", "#f08080", "#afeeee"];
 
 let i = 0;
 
-const navLinks = Array.from(document.querySelectorAll(".nav-link")).forEach(
-  item => {
-    item.style.cssText = `background-color: ${colors[i++]}`;
-  }
-);
-
-Array.from(document.querySelectorAll(".price-button")).forEach(item => {
-  item.onclick = () => {
-    item.parentElement.parentElement.classList.add("change");
-  };
+Array.from(document.querySelectorAll(".nav-link")).forEach(item => {
+  item.style.cssText = `background-color: ${colors[i++]}`;
 });
 
-Array.from(document.querySelectorAll(".back-button")).forEach(item => {
+Array.from(document.querySelectorAll(".navigation-button")).forEach(item => {
   item.onclick = () => {
-    item.parentElement.parentElement.classList.remove("change");
+    item.parentElement.parentElement.classList.toggle("change");
   };
 });
